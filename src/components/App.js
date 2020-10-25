@@ -19,6 +19,7 @@ const App = () => {
     setBallPosition({ left: "0px", top: "0px" });
     setX(0);
     setY(0);
+    setRenderBall(!renderBall);
   };
   const renderChoice = () => {
     if (renderBall) {
@@ -38,41 +39,37 @@ const App = () => {
 
   const handleArrowClick = (event) => {
     if (event.keyCode === 39) {
-      let newX = Number(x + 5);
-      let newL = `${newX}px`;
-      let newBall = {
-        left: newL,
+      let nx = Number(x + 5);
+      let Ball = {
+        left: `${nx}px`,
         top: `${y}px`
       };
-      setBallPosition(newBall);
-      setX(newX);
-    } else if (event.keyCode === 37) {
-      let newX = Number(x - 5);
-      let newL = `${newX}px`;
-      let newBall = {
-        left: newL,
-        top: `${y}px`
-      };
-      setBallPosition(newBall);
-      setX(newX);
+      setBallPosition(Ball);
+      setX(nx);
     } else if (event.keyCode === 40) {
-      let newY = Number(y + 5);
-      let newT = `${newY}px`;
-      let newBall = {
+      let ny = Number(y + 5);
+      let Ball = {
         left: `${x}px`,
-        top: newT
+        top: `${ny}px`
       };
-      setBallPosition(newBall);
-      setY(newY);
+      setBallPosition(Ball);
+      setY(ny);
+    } else if (event.keyCode === 37) {
+      let nx = Number(x - 5);
+      let Ball = {
+        left: `${nx}px`,
+        top: `${y}px`
+      };
+      setBallPosition(Ball);
+      setX(nx);
     } else if (event.keyCode === 38) {
-      let newY = Number(y - 5);
-      let newT = `${newY}px`;
-      let newBall = {
+      let ny = Number(y - 5);
+      let Ball = {
         left: `${x}px`,
-        top: newT
+        top: `${ny}px`
       };
-      setBallPosition(newBall);
-      setY(newY);
+      setBallPosition(Ball);
+      setY(ny);
     }
   };
 
